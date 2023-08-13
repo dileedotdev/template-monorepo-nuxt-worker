@@ -1,0 +1,20 @@
+{
+  "name": "template-nuxt-worker",
+  "private": true,
+  "packageManager": "pnpm@8.6.10",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint && eslint .",
+    "lint:fix": "turbo run lint:fix && eslint --fix .",
+    "type:check": "turbo run type:check && tsc -p ./tsconfig.worker.json --noEmit"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.40.2",
+    "@cloudflare/workers-types": "^4.20230807.0",
+    "@turbo/gen": "^1.10.12",
+    "eslint": "^8.47.0",
+    "turbo": "latest",
+    "typescript": "^5.1.6"
+  }
+}

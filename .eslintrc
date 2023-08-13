@@ -1,0 +1,10 @@
+{
+  "extends": "@antfu",
+  "rules": {
+    "max-len": ["warn", 120]
+  },
+  "ignorePatterns": [
+    ".*",
+    "tsconfig*.json"
+  ]
+}
