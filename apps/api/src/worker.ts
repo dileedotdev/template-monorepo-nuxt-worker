@@ -10,6 +10,6 @@
 
 export default {
   async fetch(request: Request, env: unknown, ctx: ExecutionContext) {
-    return new Response('Hello World!')
+    return new Response('Hello World dilee.dev!')
   },
 }
