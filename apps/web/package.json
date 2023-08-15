@@ -4,18 +4,20 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --port 3000",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
+    "preview": "NITRO_PRESET=cloudflare nuxt build && wrangler dev --port 3000",
     "postinstall": "nuxt prepare",
     "type:check": "nuxt typecheck",
-    "deploy:development": "NITRO_PRESET=cloudflare nuxt build && wrangler deploy --env development",
-    "deploy:preview": "NITRO_PRESET=cloudflare nuxt build && wrangler deploy --env preview",
-    "deploy:production": "NITRO_PRESET=cloudflare nuxt build && wrangler deploy --env production"
+    "deploy:development": "NITRO_PRESET=cloudflare nuxt build --dotenv .env.development && wrangler deploy --env development",
+    "deploy:preview": "NITRO_PRESET=cloudflare nuxt build --dotenv .env.preview && wrangler deploy --env preview",
+    "deploy:production": "NITRO_PRESET=cloudflare nuxt build --dotenv .env.production && wrangler deploy --env production"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
+    "@trpc/client": "^10.37.1",
     "@types/node": "^18.17.5",
+    "api": "workspace:^",
     "nuxt": "^3.6.5",
+    "trpc-nuxt": "^0.10.7",
     "wrangler": "^3.5.0"
   }
 }

@@ -8,6 +8,7 @@
     "lint": "turbo run lint && eslint .",
     "lint:fix": "turbo run lint:fix && eslint --fix .",
     "type:check": "turbo run type:check && tsc -p ./tsconfig.worker.json --noEmit",
+    "preview": "turbo run preview",
     "deploy:development": "turbo run deploy:development",
     "deploy:preview": "turbo run deploy:preview",
     "deploy:production": "turbo run deploy:production"

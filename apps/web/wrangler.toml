@@ -7,9 +7,12 @@ bucket = ".output/public"
 
 [env.development]
 route = { pattern = "development.resolvex.ai", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "resolvex-api-development" }]
 
 [env.preview]
 route = { pattern = "preview.resolvex.ai", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "resolvex-api-preview" }]
 
 [env.production]
 route = { pattern = "resolvex.ai", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "resolvex-api-production" }]

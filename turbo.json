@@ -26,6 +26,7 @@
       "cache": false,
       "persistent": true
     },
+    "preview": {},
     "deploy:development": {},
     "deploy:preview": {},
     "deploy:production": {}

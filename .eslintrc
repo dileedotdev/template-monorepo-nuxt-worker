@@ -4,7 +4,14 @@
     "max-len": ["warn", 120]
   },
   "ignorePatterns": [
-    ".*",
-    "tsconfig*.json"
+    ".*"
+  ],
+  "overrides": [
+    {
+      "files": ["*.json"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
   ]
 }
