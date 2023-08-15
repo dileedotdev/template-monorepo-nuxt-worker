@@ -9,6 +9,7 @@ route = { pattern = "development.api.resolvex.ai", custom_domain = true }
 route = { pattern = "preview.api.resolvex.ai", custom_domain = true }
 
 [env.production]
+logpush = true
 route = { pattern = "api.resolvex.ai", custom_domain = true }
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)

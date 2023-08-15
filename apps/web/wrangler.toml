@@ -14,5 +14,6 @@ route = { pattern = "preview.resolvex.ai", custom_domain = true }
 services = [{ binding = "API_SERVICE", service = "resolvex-api-preview" }]
 
 [env.production]
+logpush = true
 route = { pattern = "resolvex.ai", custom_domain = true }
 services = [{ binding = "API_SERVICE", service = "resolvex-api-production" }]
