@@ -1,5 +1,6 @@
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch'
 import { appRouter } from './trpc.router'
+import { queryDuplications } from './trpc'
 
 export async function handleTrpcRequest(
   request: Request,
@@ -7,11 +8,14 @@ export async function handleTrpcRequest(
   const url = new URL(request.url)
 
   if (url.pathname.startsWith('/trpc')) {
-    return await fetchRequestHandler({
+    const res = await fetchRequestHandler({
       endpoint: '/trpc',
       req: request,
       router: appRouter,
       createContext: () => ({}),
     })
+
+    queryDuplications.clear()
+    return res
   }
 }

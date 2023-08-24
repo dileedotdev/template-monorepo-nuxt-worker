@@ -14,10 +14,10 @@
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@trpc/client": "^10.37.1",
-    "@types/node": "^18.17.5",
+    "@types/node": "^18.17.8",
     "api": "workspace:^",
     "nuxt": "^3.6.5",
-    "trpc-nuxt": "^0.10.7",
-    "wrangler": "^3.5.0"
+    "trpc-nuxt": "^0.10.11",
+    "wrangler": "^3.5.1"
   }
 }

@@ -1,7 +1,8 @@
 {
   "extends": "@antfu",
   "rules": {
-    "max-len": ["warn", 120]
+    "max-len": ["warn", 120],
+    "n/prefer-global/process": "off"
   },
   "ignorePatterns": [
     ".*"

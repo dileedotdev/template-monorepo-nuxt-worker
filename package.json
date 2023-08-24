@@ -14,9 +14,9 @@
     "deploy:production": "turbo run deploy:production"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.40.2",
-    "@cloudflare/workers-types": "^4.20230807.0",
-    "@turbo/gen": "^1.10.12",
+    "@antfu/eslint-config": "^0.40.3",
+    "@cloudflare/workers-types": "^4.20230821.0",
+    "@turbo/gen": "^1.10.13",
     "eslint": "^8.47.0",
     "turbo": "latest",
     "typescript": "^5.1.6"
