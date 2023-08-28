@@ -2,15 +2,21 @@ name = "resolvex-api"
 main = "src/worker.ts"
 compatibility_date = "2023-08-13"
 
+[env.local]
+vars = { WORKER_ENV = "development", WEB_URL = "http://localhost:3000" }
+
 [env.development]
 route = { pattern = "development.api.resolvex.ai", custom_domain = true }
+vars = { WORKER_ENV = "development", WEB_URL = "https://development.resolvex.ai" }
 
 [env.preview]
 route = { pattern = "preview.api.resolvex.ai", custom_domain = true }
+vars = { WORKER_ENV = "development", WEB_URL = "https://preview.resolvex.ai" }
 
 [env.production]
 logpush = true
 route = { pattern = "api.resolvex.ai", custom_domain = true }
+vars = { WORKER_ENV = "production", WEB_URL = "https://resolvex.ai" }
 
 # Variable bindings. These are arbitrary, plaintext strings (similar to environment variables)
 # Note: Use secrets to store sensitive data.

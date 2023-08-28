@@ -2,9 +2,9 @@
   "name": "web",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev --port 3000",
-    "preview": "NITRO_PRESET=cloudflare nuxt build && wrangler dev --port 3000",
+    "build": "nuxt build --dotenv .env.local",
+    "dev": "nuxt dev --dotenv .env.local --port 3000",
+    "preview": "NITRO_PRESET=cloudflare nuxt build --dotenv .env.local && wrangler dev --port 3000",
     "postinstall": "nuxt prepare",
     "type:check": "nuxt typecheck",
     "deploy:development": "NITRO_PRESET=cloudflare nuxt build --dotenv .env.development && wrangler deploy --env development",

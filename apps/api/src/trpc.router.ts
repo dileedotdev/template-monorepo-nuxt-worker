@@ -5,11 +5,7 @@
 import { publicProcedure, router } from './trpc'
 
 export const appRouter = router({
-  hello: publicProcedure
-    .query(() => {
-      // This is what you're returning to your client
-      return 'hixx'
-    }),
+  ping: publicProcedure.query(() => 'pong'),
 })
 
 // export only the type definition of the API

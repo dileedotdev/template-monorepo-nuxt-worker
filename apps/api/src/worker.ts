@@ -8,25 +8,34 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import { is } from 'valibot'
 import { handleTrpcRequest } from './worker.trpc'
+import { envSchema } from './worker.env'
+import { createContext } from './worker.context'
+import { handleCorsRequest, handleCorsResponse } from './worker.cors'
 
 export default {
-  async fetch(request: Request, env: unknown, ctx: ExecutionContext) {
-    if (request.method === 'OPTIONS') {
-      return new Response(null, {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'POST, GET, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        },
-      })
-    }
+  async fetch(request: Request, env: unknown, ec: ExecutionContext) {
+    if (!is(envSchema, env))
+      return new Response('Invalid env', { status: 500 })
 
-    const res = await handleTrpcRequest(request)
-    res?.headers?.set('Access-Control-Allow-Origin', '*')
+    const context = createContext({ env, request, ec })
 
-    return res
+    if (env.WORKER_ENV === 'development')
+      await new Promise(resolve => setTimeout(resolve, 300))
 
-    return new Response('Hello World!')
+    let response: Response | undefined
+
+    response ??= await handleCorsRequest({ context })
+
+    response ??= await handleTrpcRequest({ context })
+
+    response ??= new Response('Not found', {
+      status: 404,
+    })
+
+    response = await handleCorsResponse({ response, context })
+
+    return response
   },
 }
