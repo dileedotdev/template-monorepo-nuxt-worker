@@ -1,7 +1,0 @@
-{
-  "references": [
-    { "path": "tsconfig.worker.json" }
-  ],
-  "include": [],
-  "exclude": []
-}

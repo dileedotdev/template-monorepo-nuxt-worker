@@ -1,1 +1,3 @@
 .dev.vars
+src/**.d.ts
+src/**.js

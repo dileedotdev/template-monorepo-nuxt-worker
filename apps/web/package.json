@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@resolvex/web",
   "private": true,
   "scripts": {
     "build": "nuxt build --dotenv .env.local",
@@ -13,11 +13,11 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "@trpc/client": "^10.37.1",
-    "@types/node": "^18.17.8",
-    "api": "workspace:^",
-    "nuxt": "^3.6.5",
-    "trpc-nuxt": "^0.10.11",
-    "wrangler": "^3.5.1"
+    "@resolvex/api": "workspace:^",
+    "@trpc/client": "^10.38.0",
+    "@types/node": "^18.17.12",
+    "nuxt": "^3.7.0",
+    "trpc-nuxt": "^0.10.12",
+    "wrangler": "^3.6.0"
   }
 }

@@ -7,7 +7,7 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint && eslint .",
     "lint:fix": "turbo run lint:fix && eslint --fix .",
-    "type:check": "turbo run type:check && tsc -p ./tsconfig.worker.json --noEmit",
+    "type:check": "turbo run type:check",
     "preview": "turbo run preview",
     "deploy:development": "turbo run deploy:development",
     "deploy:preview": "turbo run deploy:preview",
@@ -15,7 +15,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.40.3",
-    "@cloudflare/workers-types": "^4.20230821.0",
     "@turbo/gen": "^1.10.13",
     "eslint": "^8.48.0",
     "turbo": "latest",
