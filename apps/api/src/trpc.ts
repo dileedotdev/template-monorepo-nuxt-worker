@@ -5,13 +5,10 @@ import type { Context } from './worker.context'
 
 export function createTRPCContext({ context }: { context: Context }) {
   return async (opts: FetchCreateContextFnOptions) => {
-    const ctx = {
+    return {
       ...context,
       ...opts,
-      request: undefined,
     }
-
-    return ctx as Omit<typeof ctx, 'request'>
   }
 }
 

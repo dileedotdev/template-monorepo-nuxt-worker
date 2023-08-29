@@ -3,15 +3,19 @@ import { appRouter } from './trpc.router'
 import { createTRPCContext, queryDuplications } from './trpc'
 import type { Context } from './worker.context'
 
-export async function handleTrpcRequest({ context }: { context: Context }) {
-  const url = new URL(context.request.url)
+export async function handleTrpcRequest({ request, context }: { request: Request; context: Context }) {
+  const url = new URL(request.url)
 
   if (url.pathname.startsWith('/trpc')) {
     const res = await fetchRequestHandler({
       endpoint: '/trpc',
-      req: context.request,
+      req: request,
       router: appRouter,
       createContext: createTRPCContext({ context }),
+      onError({ error }) {
+        if (error.code === 'INTERNAL_SERVER_ERROR')
+          console.error(error)
+      },
     })
 
     queryDuplications.clear()

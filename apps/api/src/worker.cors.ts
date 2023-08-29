@@ -1,7 +1,7 @@
 import type { Context } from './worker.context'
 
-export async function handleCorsRequest({ context }: { context: Context }) {
-  if (context.request.method === 'OPTIONS')
+export async function handleCorsRequest({ request }: { context: Context; request: Request }) {
+  if (request.method === 'OPTIONS')
     return new Response()
 }
 

@@ -7,12 +7,6 @@
     "build": {
       "dependsOn": [
         "^build"
-      ],
-      "outputs": [
-        ".next/**",
-        "!.next/cache/**",
-        ".nuxt/**",
-        ".output/**"
       ]
     },
     "lint": {},
@@ -26,9 +20,25 @@
       "cache": false,
       "persistent": true
     },
-    "preview": {},
-    "deploy:development": {},
-    "deploy:preview": {},
-    "deploy:production": {}
+    "preview": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "deploy:development": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "deploy:preview": {
+      "dependsOn": [
+        "^build"
+      ]
+    },
+    "deploy:production": {
+      "dependsOn": [
+        "^build"
+      ]
+    }
   }
 }
