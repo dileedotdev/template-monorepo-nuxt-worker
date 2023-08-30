@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "wrangler dev --env local --port 8000",
     "preview": "wrangler dev --env local --port 8000",
+    "build": "tsc --build",
     "type:check": "tsc --noEmit",
     "db:generate": "drizzle-kit generate:sqlite",
     "db:studio": "drizzle-kit studio --port 8001 --verbose",
