@@ -1,4 +1,4 @@
 .dev.vars
-src/**.d.ts
-src/**.js
+**.d.ts
+**.js
 .wrangler

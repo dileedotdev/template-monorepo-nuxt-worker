@@ -1,4 +1,4 @@
-name = "resolvex-web"
+name = "test-web"
 main = ".output/server/index.mjs"
 compatibility_date = "2023-08-13"
 
@@ -6,14 +6,14 @@ compatibility_date = "2023-08-13"
 bucket = ".output/public"
 
 [env.development]
-route = { pattern = "development.resolvex.ai", custom_domain = true }
-services = [{ binding = "API_SERVICE", service = "resolvex-api-development" }]
+route = { pattern = "development.test.potensd.dev", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "test-api-development" }]
 
 [env.preview]
-route = { pattern = "preview.resolvex.ai", custom_domain = true }
-services = [{ binding = "API_SERVICE", service = "resolvex-api-preview" }]
+route = { pattern = "preview.test.potensd.dev", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "test-api-preview" }]
 
 [env.production]
 logpush = true
-route = { pattern = "resolvex.ai", custom_domain = true }
-services = [{ binding = "API_SERVICE", service = "resolvex-api-production" }]
+route = { pattern = "test.potensd.dev", custom_domain = true }
+services = [{ binding = "API_SERVICE", service = "test-api-production" }]

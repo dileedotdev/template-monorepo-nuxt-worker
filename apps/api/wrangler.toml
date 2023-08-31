@@ -1,4 +1,4 @@
-name = "resolvex-api"
+name = "test-api"
 main = "src/worker.ts"
 compatibility_date = "2023-08-13"
 
@@ -9,23 +9,23 @@ d1_databases = [
 ]
 
 [env.development]
-route = { pattern = "development.api.resolvex.ai", custom_domain = true }
-vars = { WORKER_ENV = "development", WEB_URL = "https://development.resolvex.ai" }
+route = { pattern = "development.api.test.potensd.dev", custom_domain = true }
+vars = { WORKER_ENV = "development", WEB_URL = "https://development.test.potensd.dev" }
 d1_databases = [
     { binding = "DB", database_name = "main-db", database_id = "0f11479b-c924-4a87-9e71-8a46d613840a" },
 ]
 
 [env.preview]
-route = { pattern = "preview.api.resolvex.ai", custom_domain = true }
-vars = { WORKER_ENV = "development", WEB_URL = "https://preview.resolvex.ai" }
+route = { pattern = "preview.api.test.potensd.dev", custom_domain = true }
+vars = { WORKER_ENV = "development", WEB_URL = "https://preview.test.potensd.dev" }
 d1_databases = [
     { binding = "DB", database_name = "main-db", database_id = "0f11479b-c924-4a87-9e71-8a46d613840a" },
 ]
 
 [env.production]
 logpush = true
-route = { pattern = "api.resolvex.ai", custom_domain = true }
-vars = { WORKER_ENV = "production", WEB_URL = "https://resolvex.ai" }
+route = { pattern = "api.test.potensd.dev", custom_domain = true }
+vars = { WORKER_ENV = "production", WEB_URL = "https://test.potensd.dev" }
 d1_databases = [
     { binding = "DB", database_name = "main-db", database_id = "0f11479b-c924-4a87-9e71-8a46d613840a" },
 ]
